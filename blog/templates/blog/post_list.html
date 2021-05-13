@@ -4,43 +4,42 @@
         <title>Qwer blog</title> 
     </head>
     <body>
-        <h1>A heading</h1>
-        <h2>A sub-heading</h2>
-        <h3>A sub-sub-heading</h3>
-        <em>text</em>
-        <p>Hi there!</p>
-        <p>It works!</p>
-        <strong>text</strong>
+        
         <br>
-        <a href=" http://127.0.0.1:8000/">link</a>
-        <ul><li>first item</li>
-        <li>second item</li></ul>
-        <div></div> 
-<nav></nav> 
-<article></article> 
-<section></section>
-<header></header>
-<main></main> 
-<aside></aside> 
-<footer></footer>
-<time></time>    
+        
+        <div>
+         {% for post in posts %}
+             {{ post }}
+         {% endfor %}
+         
+        </div> 
 
-<header>
+        <header>
             <h1><a href="/">Satyamsahugr8 Blog</a></h1>
-            <h1><a href="http://t.me/flash_king">My telegram</a></h1>
         </header>
+
+        {% for post in posts %}
+
+        <article>
+            <time>published: 13.05.2021, 12:00</time>
+            <h2><a href="http://www.t.me/flash_king">My Telegram</a></h2>
+            <p>shit gang</p>
+        </article>
+
+        
 
         <article>
             <time>published: 14.06.2020, 12:00</time>
-            <h2><a href="https://github.com/Satyamsahugr8">My first post</a></h2>
+            <h2><a href="https://github.com/Satyamsahugr8">My Github</a></h2>
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         </article>
 
         <article>
             <time>published: 14.06.2020, 12:00</time>
-            <h2><a href="">My second post</a></h2>
+            <h2><a href="https://www.youtube.com/channel/UChbCW-CPfPrIN47Z6V9WJ4g">My Youtube Channel</a></h2>
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
         </article>
+        {% endfor %}
 
-</body>
+    </body>
 </html>
