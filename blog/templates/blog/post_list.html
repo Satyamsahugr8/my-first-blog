@@ -1,47 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Qwer blog</title> 
-    </head>
-    <body>
-        
-        <br>
-        
-        <div>
-         {% for post in posts %}
-             {{ post }}
-         {% endfor %}
-         
-        </div> 
+{% extends 'blog/base.html' %}
 
-        <header>
-            <h1><a href="/">Satyamsahugr8 Blog</a></h1>
-        </header>
 
-        <article>
-            <time>published: 13.05.2021, 12:00</time>
-            <h2><a href="https://www.instagram.com/satyamsahu_/">My Instagram</a></h2>
-            <p>shit gang</p>
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <time class="date">
+                {{ post.published_date }}
+            </time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-
-        <article>
-            <time>published: 14.05.2021, 12:00</time>
-            <h2><a href="http://www.t.me/flash_king">My Telegram</a></h2>
-            <p>shit gang</p>
-        </article>
-
-        <article>
-            <time>published: 14.06.2020, 12:00</time>
-            <h2><a href="https://github.com/Satyamsahugr8">My Github</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </article>
-
-        <article>
-            <time>published: 14.06.2020, 12:00</time>
-            <h2><a href="https://www.youtube.com/channel/UChbCW-CPfPrIN47Z6V9WJ4g">My Youtube Channel</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </article>
-    
-
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
